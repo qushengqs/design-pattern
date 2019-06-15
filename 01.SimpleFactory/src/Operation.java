@@ -3,8 +3,8 @@
  */
 public abstract class Operation {
 
-    private Double numberA=0.0;
-    private Double numberB=0.0;
+    private Double numberA = 0.0;
+    private Double numberB = 0.0;
 
     public Double getNumberA() {
         return numberA;

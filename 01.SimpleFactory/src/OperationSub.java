@@ -4,7 +4,7 @@
 public class OperationSub extends Operation {
     @Override
     public Double getResult() {
-        Double result=this.getNumberA()-this.getNumberB();
+        Double result = this.getNumberA() - this.getNumberB();
         return result;
     }
 }
