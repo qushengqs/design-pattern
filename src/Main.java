@@ -8,6 +8,7 @@ public class Main {
         strategyFactoryTest();
         decoratorTest();
         proxyTest();
+        factoryTest();
     }
 
     /**
@@ -64,15 +65,30 @@ public class Main {
     /**
      * 代理模式
      */
-    public static void proxyTest(){
+    public static void proxyTest() {
         System.out.println("代理模式");
 
-        SchoolGirl schoolGirl=new SchoolGirl();
+        SchoolGirl schoolGirl = new SchoolGirl();
         schoolGirl.setName("李娇娇");
 
-        Proxy proxy=new Proxy(schoolGirl);
+        Proxy proxy = new Proxy(schoolGirl);
         proxy.giveDolls();
         proxy.giveFlowers();
         proxy.giveChocolate();
+    }
+
+    /**
+     * 工厂模式
+     */
+    public static void factoryTest() {
+        System.out.println("工厂模式");
+
+        IFactory iFactory = new AddFactory();
+        Operation operation = iFactory.createOperation();
+
+        operation.setNumberA(1.0);
+        operation.setNumberB(2.0);
+        Double result = operation.getResult();
+        System.out.println(result);
     }
 }
