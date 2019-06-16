@@ -6,6 +6,7 @@ public class Main {
         simpleFactoryTest();
         strategyTest();
         strategyFactoryTest();
+        decoratorTest();
     }
 
     /**
@@ -39,5 +40,23 @@ public class Main {
         CashFactoryContext cashFactoryContext = new CashFactoryContext("满300减100");
         Double result = cashFactoryContext.getResult(700.0);
         System.out.println(result);
+    }
+
+    /**
+     * 装饰模式
+     */
+    public static void decoratorTest() {
+        System.out.println("装饰模式");
+        Person person = new Person("小菜");
+
+        Sneakers sneakers = new Sneakers();
+        BigTrouser bigTrouser = new BigTrouser();
+        TShirts tShirts = new TShirts();
+
+        sneakers.decorate(person);
+        bigTrouser.decorate(sneakers);
+        tShirts.decorate(bigTrouser);
+
+        tShirts.show();
     }
 }
