@@ -7,6 +7,7 @@ public class Main {
         strategyTest();
         strategyFactoryTest();
         decoratorTest();
+        proxyTest();
     }
 
     /**
@@ -58,5 +59,20 @@ public class Main {
         tShirts.decorate(bigTrouser);
 
         tShirts.show();
+    }
+
+    /**
+     * 代理模式
+     */
+    public static void proxyTest(){
+        System.out.println("代理模式");
+
+        SchoolGirl schoolGirl=new SchoolGirl();
+        schoolGirl.setName("李娇娇");
+
+        Proxy proxy=new Proxy(schoolGirl);
+        proxy.giveDolls();
+        proxy.giveFlowers();
+        proxy.giveChocolate();
     }
 }
