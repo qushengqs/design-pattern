@@ -12,6 +12,7 @@ public class Main {
         prototypeTest();
         prototypeDeepTest();
         templateTest();
+        facadeTest();
     }
 
     /**
@@ -158,5 +159,17 @@ public class Main {
 
         abstractClass = new ConcreteClassB();
         abstractClass.templateMethod();
+    }
+
+    /**
+     * 外观模式
+     */
+    public static void facadeTest() {
+        System.out.println("外观模式");
+
+        Facade facade = new Facade();
+
+        facade.methodA();
+        facade.methodB();
     }
 }
