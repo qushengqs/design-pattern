@@ -14,6 +14,7 @@ public class Main {
         templateTest();
         facadeTest();
         builderTest();
+        observerTest();
     }
 
     /**
@@ -192,5 +193,22 @@ public class Main {
         director.construct(builder2);
         Product product2 = builder2.getResult();
         product2.show();
+    }
+
+    /**
+     * 观察者模式
+     */
+    public static void observerTest() {
+        System.out.println("观察者模式");
+
+        ConcreteSubject subject = new ConcreteSubject();
+
+        subject.attach(new ConcreteObserver(subject, "X"));
+        subject.attach(new ConcreteObserver(subject, "Y"));
+        subject.attach(new ConcreteObserver(subject, "Z"));
+
+        subject.setSubjectState("ABC");
+        subject.modify();
+
     }
 }
