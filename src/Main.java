@@ -16,6 +16,7 @@ public class Main {
         builderTest();
         observerTest();
         stateTest();
+        adapterTest();
     }
 
     /**
@@ -215,10 +216,10 @@ public class Main {
     /**
      * 状态模式
      */
-    public static void stateTest(){
+    public static void stateTest() {
         System.out.println("状态模式");
 
-        Work work=new Work();
+        Work work = new Work();
         work.setHour(9);
         work.writeProgram();
         work.setHour(10);
@@ -239,5 +240,19 @@ public class Main {
 
         work.setHour(22);
         work.writeProgram();
+    }
+
+    /**
+     * 适配器模式
+     */
+    public static void adapterTest() {
+        System.out.println("适配器模式");
+
+        Player player = new Forwards("巴蒂尔");
+        player.attack();
+
+        Player ym = new Translator("姚明");
+        ym.attack();
+        ym.defense();
     }
 }
