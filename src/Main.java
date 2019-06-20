@@ -17,6 +17,7 @@ public class Main {
         observerTest();
         stateTest();
         adapterTest();
+        MementoTest.test();
     }
 
     /**
