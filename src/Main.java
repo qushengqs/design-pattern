@@ -18,5 +18,6 @@ public class Main {
         StateTest.test();
         AdapterTest.test();
         MementoTest.test();
+        IteratorTest.test();
     }
 }
